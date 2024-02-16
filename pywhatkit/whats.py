@@ -31,8 +31,6 @@ def sendwhatmsg_instantly(
     phone_no = phone_no.replace(" ", "")
     if not fullmatch(r"^\+?[0-9]{2,4}\s?[0-9]{9,15}", phone_no):
         raise exceptions.InvalidPhoneNumber("Invalid Phone Number.")
-
-    web.open(f"https://web.whatsapp.com/send?phone={phone_no}")
     
     web.open(f"https://web.whatsapp.com/send?phone={phone_no}&text={quote(message)}")
     time.sleep(4)
